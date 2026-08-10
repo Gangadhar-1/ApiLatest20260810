@@ -1,0 +1,14 @@
+.vs/
+bin/
+obj/
+*.user
+*.suo
+appsettings.json
+appsettings.Development.json
+uploads/
+Properties/PublishProfiles/
+Properties/ServiceDependencies/
+*.lnk
+*.rar
+*.TMP*
+Properties/serviceDependencies*.json

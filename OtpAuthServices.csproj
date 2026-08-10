@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ErrorOnDuplicatePublishOutputFiles>false</ErrorOnDuplicatePublishOutputFiles>
+		<ImplicitUsings>enable</ImplicitUsings>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Azure.Storage.Blobs" Version="12.22.1" />
+		<PackageReference Include="Bogus" Version="35.6.1" />
+		<PackageReference Include="Google.Apis.Auth" Version="1.70.0" />
+		<PackageReference Include="Microsoft.Azure.Cosmos" Version="3.47.2" />
+		<PackageReference Include="Microsoft.Azure.DocumentDB.Core" Version="2.22.0">
+			<ExcludeAssets>runtime</ExcludeAssets>
+		</PackageReference>
+
+
+		<PackageReference Include="Microsoft.Data.SqlClient" Version="5.2.2" />
+		<PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="8.0.0" />
+		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+		<PackageReference Include="System.Net.Http.Json" Version="9.0.8" />
+		<PackageReference Include="Twilio.AspNet.Core" Version="8.0.2" />
+	</ItemGroup>
+
+	<Target Name="RemoveDuplicateCosmosCRTCompat" AfterTargets="Publish">
+		<ItemGroup>
+			<FileToPublish Remove="C:\Users\Admin\.nuget\packages\microsoft.azure.documentdb.core\2.22.0\runtimes\win7-x64\native\Cosmos.CRTCompat.dll" />
+		</ItemGroup>
+	</Target>
+
+</Project>
