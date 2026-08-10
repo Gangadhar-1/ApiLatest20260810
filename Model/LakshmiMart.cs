@@ -69,7 +69,9 @@ namespace OtpAuthServices.Model
        
         public string SlotTime { get; set; }
 
-        public string Location { get; set; }
+       // public string Location { get; set; }
+           
+
 
         public List<Category> Categories { get; set; } = new List<Category>();
 
